@@ -16,37 +16,37 @@ class MyHomeApp extends StatefulWidget {
 }
 
 class _MyHomeAppState extends State<MyHomeApp> {
-  TextEditingController controller1 = TextEditingController();
-  TextEditingController controller2 = TextEditingController();
-  int hasil = 0, angka1 = 0, angka2 = 0;
+  TextEditingController textfield1 = TextEditingController();
+  TextEditingController textfield2 = TextEditingController();
+  double hasil = 0, angka1 = 0, angka2 = 0;
   add() {
     setState(() {
-      angka1 = int.parse(controller1.text);
-      angka2 = int.parse(controller2.text);
+      angka1 = double.parse(textfield1.text);
+      angka2 = double.parse(textfield2.text);
       hasil = angka1 + angka2;
     });
   }
 
   minus() {
     setState(() {
-      angka1 = int.parse(controller1.text);
-      angka2 = int.parse(controller2.text);
+      angka1 = double.parse(textfield1.text);
+      angka2 = double.parse(textfield2.text);
       hasil = angka1 - angka2;
     });
   }
 
   bag() {
     setState(() {
-      angka1 = int.parse(controller1.text);
-      angka2 = int.parse(controller2.text);
-      hasil = angka1 ~/ angka2;
+      angka1 = double.parse(textfield1.text);
+      angka2 = double.parse(textfield2.text);
+      hasil = angka1 / angka2;
     });
   }
 
   kali() {
     setState(() {
-      angka1 = int.parse(controller1.text);
-      angka2 = int.parse(controller2.text);
+      angka1 = double.parse(textfield1.text);
+      angka2 = double.parse(textfield2.text);
       hasil = angka1 * angka2;
     });
   }
@@ -56,7 +56,7 @@ class _MyHomeAppState extends State<MyHomeApp> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text('Calculator App'),
+        title: Text('Calculator Apps'),
         centerTitle: true,
       ),
       body: Padding(
@@ -74,7 +74,7 @@ class _MyHomeAppState extends State<MyHomeApp> {
               height: 20,
             ),
             TextField(
-              controller: controller1,
+              controller: textfield1,
               decoration: InputDecoration(
                 labelText: 'Masukan Angka pertama',
                 border: OutlineInputBorder(
@@ -86,7 +86,7 @@ class _MyHomeAppState extends State<MyHomeApp> {
               height: 20,
             ),
             TextField(
-              controller: controller2,
+              controller: textfield2,
               decoration: InputDecoration(
                 labelText: 'Masukan Angka Kedua',
                 border: OutlineInputBorder(
@@ -111,8 +111,8 @@ class _MyHomeAppState extends State<MyHomeApp> {
                   ),
                   onPressed: () {
                     add();
-                    controller1.clear();
-                    controller2.clear();
+                    textfield1.clear();
+                    textfield2.clear();
                   },
                   child: const Text(
                     '+',
@@ -129,8 +129,8 @@ class _MyHomeAppState extends State<MyHomeApp> {
                   ),
                   onPressed: () {
                     minus();
-                    controller1.clear();
-                    controller2.clear();
+                    textfield1.clear();
+                    textfield2.clear();
                   },
                   child: const Text(
                     '-',
@@ -157,8 +157,8 @@ class _MyHomeAppState extends State<MyHomeApp> {
                     ),
                     onPressed: () {
                       bag();
-                      controller1.clear();
-                      controller2.clear();
+                      textfield1.clear();
+                      textfield2.clear();
                     },
                     child: const Text(
                       ':',
@@ -174,8 +174,8 @@ class _MyHomeAppState extends State<MyHomeApp> {
                   ),
                   onPressed: () {
                     kali();
-                    controller1.clear();
-                    controller2.clear();
+                    textfield1.clear();
+                    textfield2.clear();
                   },
                   child: const Text(
                     'X',
