@@ -16,38 +16,38 @@ class MyHomeApp extends StatefulWidget {
 }
 
 class _MyHomeAppState extends State<MyHomeApp> {
-  TextEditingController textfield1 = TextEditingController();
-  TextEditingController textfield2 = TextEditingController();
-  double hasil = 0, angka1 = 0, angka2 = 0;
-  add() {
+  TextEditingController input1 = TextEditingController();
+  TextEditingController input2 = TextEditingController();
+  double result = 0, number1 = 0, number2 = 0;
+  tambah() {
     setState(() {
-      angka1 = double.parse(textfield1.text);
-      angka2 = double.parse(textfield2.text);
-      hasil = angka1 + angka2;
+      number1 = double.parse(input1.text);
+      number2 = double.parse(input2.text);
+      result = number1 + number2;
     });
   }
 
-  minus() {
+  kurang() {
     setState(() {
-      angka1 = double.parse(textfield1.text);
-      angka2 = double.parse(textfield2.text);
-      hasil = angka1 - angka2;
+      number1 = double.parse(input1.text);
+      number2 = double.parse(input2.text);
+      result = number1 - number2;
     });
   }
 
-  bag() {
+  bagi() {
     setState(() {
-      angka1 = double.parse(textfield1.text);
-      angka2 = double.parse(textfield2.text);
-      hasil = angka1 / angka2;
+      number1 = double.parse(input1.text);
+      number2 = double.parse(input2.text);
+      result = number1 / number2;
     });
   }
 
   kali() {
     setState(() {
-      angka1 = double.parse(textfield1.text);
-      angka2 = double.parse(textfield2.text);
-      hasil = angka1 * angka2;
+      number1 = double.parse(input1.text);
+      number2 = double.parse(input2.text);
+      result = number1 * number2;
     });
   }
 
@@ -55,8 +55,8 @@ class _MyHomeAppState extends State<MyHomeApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text('Calculator Apps'),
+        backgroundColor: Colors.purpleAccent,
+        title: Text('Aplikasi Kalkulator'),
         centerTitle: true,
       ),
       body: Padding(
@@ -64,7 +64,7 @@ class _MyHomeAppState extends State<MyHomeApp> {
         child: Column(
           children: [
             Text(
-              'Result: $hasil ',
+              'Hasilnya: $result ',
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
@@ -74,7 +74,7 @@ class _MyHomeAppState extends State<MyHomeApp> {
               height: 20,
             ),
             TextField(
-              controller: textfield1,
+              controller: input1,
               decoration: InputDecoration(
                 labelText: 'Masukan Angka pertama',
                 border: OutlineInputBorder(
@@ -86,7 +86,7 @@ class _MyHomeAppState extends State<MyHomeApp> {
               height: 20,
             ),
             TextField(
-              controller: textfield2,
+              controller: input2,
               decoration: InputDecoration(
                 labelText: 'Masukan Angka Kedua',
                 border: OutlineInputBorder(
@@ -103,16 +103,16 @@ class _MyHomeAppState extends State<MyHomeApp> {
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: Colors.purpleAccent,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   ),
                   onPressed: () {
-                    add();
-                    textfield1.clear();
-                    textfield2.clear();
+                    tambah();
+                    input1.clear();
+                    input2.clear();
                   },
                   child: const Text(
                     '+',
@@ -121,16 +121,16 @@ class _MyHomeAppState extends State<MyHomeApp> {
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: Colors.purpleAccent,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   ),
                   onPressed: () {
-                    minus();
-                    textfield1.clear();
-                    textfield2.clear();
+                    kurang();
+                    input1.clear();
+                    input2.clear();
                   },
                   child: const Text(
                     '-',
@@ -148,7 +148,7 @@ class _MyHomeAppState extends State<MyHomeApp> {
               children: [
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
+                      backgroundColor: Colors.purpleAccent,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
@@ -156,9 +156,9 @@ class _MyHomeAppState extends State<MyHomeApp> {
                           EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                     ),
                     onPressed: () {
-                      bag();
-                      textfield1.clear();
-                      textfield2.clear();
+                      bagi();
+                      input1.clear();
+                      input2.clear();
                     },
                     child: const Text(
                       ':',
@@ -166,7 +166,7 @@ class _MyHomeAppState extends State<MyHomeApp> {
                     )),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: Colors.purpleAccent,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -174,8 +174,8 @@ class _MyHomeAppState extends State<MyHomeApp> {
                   ),
                   onPressed: () {
                     kali();
-                    textfield1.clear();
-                    textfield2.clear();
+                    input1.clear();
+                    input2.clear();
                   },
                   child: const Text(
                     'X',
